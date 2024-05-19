@@ -13,3 +13,4 @@
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Infrastructure/obj/Debug/net8.0/refint/Boleto.Infrastructure.dll
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Infrastructure/obj/Debug/net8.0/Boleto.Infrastructure.pdb
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Infrastructure/obj/Debug/net8.0/ref/Boleto.Infrastructure.dll
+/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Infrastructure/obj/Debug/net8.0/Boleto.Infrastructure.sourcelink.json

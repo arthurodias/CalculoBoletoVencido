@@ -4,10 +4,18 @@ using Boleto.Domain.Intefaces.Services;
 using Boleto.Infrastructure.Repositories;
 using Boleto.Service.ExternalServices;
 using Boleto.Service.Services;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Adiciona os serviços de HealthCheck e verifica a API externa
+builder.Services.AddHealthChecks()
+    .AddCheck("self", () => HealthCheckResult.Healthy())
+    .AddCheck<ExternalApiHealthCheck>("external_api");
+
+// Adiciona HttpClient para a verificação de API externa
+builder.Services.AddHttpClient<ExternalApiHealthCheck>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -32,6 +40,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.UseMiddleware<TokenMiddleware>();
+//app.UseMiddleware<TokenMiddleware>();
 app.MapControllers();
+// Configura o endpoint do HealthCheck
+app.MapHealthChecks("/health");
 app.Run();
