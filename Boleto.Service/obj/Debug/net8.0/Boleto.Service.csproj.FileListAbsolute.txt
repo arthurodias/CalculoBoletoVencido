@@ -15,3 +15,4 @@
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Service/obj/Debug/net8.0/refint/Boleto.Service.dll
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Service/obj/Debug/net8.0/Boleto.Service.pdb
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Service/obj/Debug/net8.0/ref/Boleto.Service.dll
+/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/Boleto.Service/obj/Debug/net8.0/Boleto.Service.sourcelink.json
