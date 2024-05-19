@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boleto.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2148927618f412931748cdbec62a73c50dc627b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13af718061d8720dc5f0f46821b7b9b255636e4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boleto.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boleto.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
