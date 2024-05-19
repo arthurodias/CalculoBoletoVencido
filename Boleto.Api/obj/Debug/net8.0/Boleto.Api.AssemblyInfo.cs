@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boleto.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bb678c733531d7e3c5a02952bd6427d81d9b170")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boleto.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boleto.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
