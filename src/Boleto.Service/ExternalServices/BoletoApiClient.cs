@@ -16,12 +16,12 @@ namespace Boleto.Service.ExternalServices
             _httpClient = httpClient;
         }
 
-        public async Task<BoletoModel> GetBoletoAsync(string code)
+        public async Task<BoletoModel> GetBoletoAsync(string code, string token)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, "https://vagas.builders/api/builders/bill-payments/codes");
-            request.Headers.Authorization = new AuthenticationHeaderValue(await GetTokenAsync());
+            request.Headers.Authorization = new AuthenticationHeaderValue(token);
 
-            var payload = new { code = code };
+            var payload = new { code };
             request.Content = new StringContent(JsonConvert.SerializeObject(payload), Encoding.UTF8, "application/json");
 
             var response = await _httpClient.SendAsync(request);
@@ -37,26 +37,6 @@ namespace Boleto.Service.ExternalServices
                 Amount = boletoData.Amount,
                 Type = boletoData.Type
             };
-        }
-
-        private async Task<string> GetTokenAsync()
-        {
-            var tokenRequest = new
-            {
-                client_id = "bd753592-cf9b-4d1a-96b9-cb8b2c01bd12",
-                client_secret = "4e8229fe-1131-439c-9846-799895a8be5b"
-            };
-
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://vagas.builders/api/builders/auth/tokens");
-            request.Content = new StringContent(JsonConvert.SerializeObject(tokenRequest), Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-
-            var content = await response.Content.ReadAsStringAsync();
-            var tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(content);
-
-            return tokenResponse.Token;
         }
     }
 }

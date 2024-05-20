@@ -1847,6 +1847,7 @@
           "Boleto.Service": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.3",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.5",
+          "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
