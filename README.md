@@ -23,16 +23,13 @@ Esta API foi desenvolvida para calcular pagamentos de boletos vencidos, garantin
 git clone https://github.com/arthurodias/CalculoBoletoVencido.git
 cd CalculoBoletoVencido
 
-2. Restaurar Dependências
-bash
-Copiar código
+### 2. Restaurar Dependências
+
 dotnet restore
 
-3. Configurar as Credenciais da API de Boletos
+### 3. Configurar as Credenciais da API de Boletos
 No arquivo appsettings.json, configure as credenciais da API:
 
-json
-Copiar código
 {
   "ApiSettings": {
     "ClientId": "bd753592-cf9b-4d1a-96b9-cb8b2c01bd12",
@@ -41,7 +38,8 @@ Copiar código
     "BoletoUrl": "https://vagas.builders/api/builders/bill-payments/codes"
   }
 }
-4. Executar a Aplicação
+
+### 4. Executar a Aplicação
 bash
 Copiar código
 dotnet run --project BoletoApi
@@ -112,14 +110,12 @@ Copiar código
 │   ├── IntegrationTests
 │   └── ...
 └── ...
-Contribuições
+
+### Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
 
-Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-Autor
+### Autor
 Arthur Rodrigues Dias - arthur.rodias@gmail.com - https://github.com/arthurodias
 
