@@ -1,3 +1,4 @@
+using Boleto.Domain.Entities;
 using Boleto.Domain.Intefaces.Proxy;
 using Boleto.Domain.Intefaces.Repositories;
 using Boleto.Domain.Intefaces.Services;
@@ -41,10 +42,18 @@ namespace Boleto.Service.Services
                 FineAmountCalculated = fine
             };
 
-            //await _boletoRepository.Save(boleto);
+            await _boletoRepository.Salvar(new BoletoEntity()
+            {
+                Amount = amount,
+                DueDate = boleto.DueDate,
+                PaymentDate = paymentDate,
+                BarCode = barCode,
+                FineAmountCalculated = fine,
+                InterestAmountCalculated = interest,
+                OriginalAmount = boleto.Amount,
+            });
 
             return result;
         }
-    
     }
 }

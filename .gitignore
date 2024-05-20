@@ -58,7 +58,7 @@ bin/
 obj/
 
 # Ignore Debug directories
-**/Debug/
+Debug/
 
 # Ignore Test result files
 TestResults/
@@ -113,3 +113,10 @@ coverage.json
 *.mdb
 *.opendb
 *.ldb
+*.db-shm
+*.db-wal
+
+# Ignore DDL files
+*.ddl
+*.dll
+*.pdb

@@ -4,6 +4,6 @@ namespace Boleto.Domain.Intefaces.Repositories
 {
     public interface IBoletoRepository
     {
-        Task Save(BoletoModel boleto);
+        Task Salvar(BoletoEntity boleto);
     }
 }

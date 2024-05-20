@@ -4,9 +4,11 @@ using Boleto.Api.Policy;
 using Boleto.Domain.Intefaces.Proxy;
 using Boleto.Domain.Intefaces.Repositories;
 using Boleto.Domain.Intefaces.Services;
+using Boleto.Infrastructure.Data;
 using Boleto.Infrastructure.Repositories;
 using Boleto.Service.ExternalServices;
 using Boleto.Service.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
 
@@ -18,21 +20,22 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Adiciona os serviços de HealthCheck e verifica a API externa
         builder.Services.AddHealthChecks()
             .AddCheck("self", () => HealthCheckResult.Healthy())
             .AddCheck<ExternalApiHealthCheck>("external_api");
 
-        // Adiciona HttpClient para a verificação de API externa
         builder.Services.AddHttpClient<ExternalApiHealthCheck>();
 
         builder.Services.AddControllers();
+
+        builder.Services.AddDbContext<BoletoDbContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Boleto API", Version = "v1" });
 
-            // Set the comments path for the Swagger JSON and UI.
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);
@@ -55,7 +58,6 @@ public class Program
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
