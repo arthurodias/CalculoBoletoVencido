@@ -1,6 +1,7 @@
+using Boleto.Domain.Models;
 using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 using System.Text;
-using System.Text.Json;
 
 namespace Boleto.Api.Middleware
 {
@@ -28,7 +29,7 @@ namespace Boleto.Api.Middleware
                 _cache.Set("AuthToken", token, cacheEntryOptions);
             }
 
-            context.Request.Headers["Authorization"] = $"Bearer {token}";
+            context.Request.Headers["Authorization"] = token;
 
             await _next(context);
         }
@@ -43,14 +44,14 @@ namespace Boleto.Api.Middleware
             };
 
             var response = await client.PostAsync("https://vagas.builders/api/builders/auth/tokens",
-                new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json"));
+                new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json"));
 
             response.EnsureSuccessStatusCode();
 
-            var responseContent = await response.Content.ReadAsStringAsync();
-            dynamic tokenResponse = JsonSerializer.Deserialize<dynamic>(responseContent);
+            var content = await response.Content.ReadAsStringAsync();
+            var tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(content);
 
-            return tokenResponse.token;
+            return tokenResponse.Token;
         }
     }
 }
