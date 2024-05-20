@@ -32,17 +32,15 @@ dotnet restore
 No arquivo appsettings.json, configure as credenciais da API:
 ```json
 {
-  "ApiSettings": {
+  "BoletoApi": {
     "ClientId": "bd753592-cf9b-4d1a-96b9-cb8b2c01bd12",
-    "ClientSecret": "4e8229fe-1131-439c-9846-799895a8be5b",
-    "AuthUrl": "https://vagas.builders/api/builders/auth/tokens",
-    "BoletoUrl": "https://vagas.builders/api/builders/bill-payments/codes"
+    "ClientSecret": "4e8229fe-1131-439c-9846-799895a8be5b"
   }
 }
 ```
 ### 4. Executar a Aplicação
 ```
-dotnet run --project BoletoApi
+dotnet run --project Boleto.Api
 ```
 A aplicação estará disponível em http://localhost:5075.
 
