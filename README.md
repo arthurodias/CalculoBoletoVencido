@@ -20,16 +20,17 @@ Esta API foi desenvolvida para calcular pagamentos de boletos vencidos, garantin
 
 ### 1. Clonar o Repositório
 
+```
 git clone https://github.com/arthurodias/CalculoBoletoVencido.git
 cd CalculoBoletoVencido
-
+```
 ### 2. Restaurar Dependências
-
+```
 dotnet restore
-
+```
 ### 3. Configurar as Credenciais da API de Boletos
 No arquivo appsettings.json, configure as credenciais da API:
-
+```json
 {
   "ApiSettings": {
     "ClientId": "bd753592-cf9b-4d1a-96b9-cb8b2c01bd12",
@@ -38,30 +39,29 @@ No arquivo appsettings.json, configure as credenciais da API:
     "BoletoUrl": "https://vagas.builders/api/builders/bill-payments/codes"
   }
 }
-
+```
 ### 4. Executar a Aplicação
-bash
-Copiar código
+```
 dotnet run --project BoletoApi
-A aplicação estará disponível em http://localhost:5000.
+```
+A aplicação estará disponível em http://localhost:5075.
 
 Endpoints da API
 
 Calcular Boleto Vencido
-Endpoint: POST /api/boletos/calculate
+Endpoint: POST /api/boleto
 
 Request:
 
-json
-Copiar código
+```json
 {
   "bar_code": "string",
   "payment_date": "string"
 }
+```
 Response:
 
-json
-Copiar código
+```json
 {
   "original_amount": 0,
   "amount": 0,
@@ -70,51 +70,39 @@ Copiar código
   "interest_amount_calculated": 0,
   "fine_amount_calculated": 0
 }
+```
 Exemplo de Uso
-bash
-Copiar código
+```
 curl --location --request POST 'http://localhost:5000/api/boletos/calculate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "bar_code": "34191790010104351004791020150008291070026000",
     "payment_date": "2023-05-10"
 }'
+```
 Testes
 
 Executar Testes Unitários e de Integração
-bash
-Copiar código
+```
 dotnet test
+```
 Estrutura de Diretórios
-
-Copiar código
-.
-├── BoletoApi
-│   ├── Controllers
-│   ├── Program.cs
-│   ├── appsettings.json
-│   └── ...
-├── BoletoDomain
-│   ├── Entities
-│   ├── Interfaces
-│   └── ...
-├── BoletoInfrastructure
-│   ├── Clients
-│   ├── Repositories
-│   └── ...
-├── BoletoService
-│   ├── Services
-│   └── ...
-├── BoletoTests
-│   ├── UnitTests
-│   ├── IntegrationTests
-│   └── ...
-└── ...
-
-### Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
-
+```
+BoletoSolution/
+├── docs/
+│   └── adr/
+├── src/
+│   ├── Boleto.API
+│   ├── Boleto.Domain
+│   ├── Boleto.Infrastructure
+│   └── Boleto.Service
+├── tests/
+│   ├── Boleto.Tests/
+│   │   ├── UnitTests
+│   │   ├── IntegrationTests
+├── .gitignore
+├── README.md
+└── BoletoSolution.sln
 
 ### Autor
 Arthur Rodrigues Dias - arthur.rodias@gmail.com - https://github.com/arthurodias
