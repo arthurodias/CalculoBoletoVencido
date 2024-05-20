@@ -1,3 +1,4 @@
+using System.Data.Common;
 using Boleto.Domain.Entities;
 using Boleto.Domain.Intefaces.Proxy;
 using Boleto.Domain.Intefaces.Repositories;

@@ -30,3 +30,5 @@
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Infrastructure/obj/Debug/net8.0/refint/Boleto.Infrastructure.dll
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Infrastructure/obj/Debug/net8.0/Boleto.Infrastructure.pdb
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Infrastructure/obj/Debug/net8.0/ref/Boleto.Infrastructure.dll
+/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Infrastructure/bin/Debug/net8.0/Boleto.Infrastructure.runtimeconfig.json
+/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Infrastructure/obj/Debug/net8.0/Boleto.Infrastructure.genruntimeconfig.cache

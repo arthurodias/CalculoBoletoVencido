@@ -15,7 +15,8 @@ namespace Boleto.Infrastructure.Data
 
             modelBuilder.Entity<BoletoEntity>(entity =>
             {
-                entity.HasKey(b => b.BarCode);
+                entity.HasKey(b => b.Id);
+                entity.Property(b => b.Id).ValueGeneratedOnAdd();
                 entity.Property(b => b.BarCode).IsRequired();
                 entity.Property(b => b.OriginalAmount).HasColumnType("decimal(18,2)");
                 entity.Property(b => b.Amount).HasColumnType("decimal(18,2)");
