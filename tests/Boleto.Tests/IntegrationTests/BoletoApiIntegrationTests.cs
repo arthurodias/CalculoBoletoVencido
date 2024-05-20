@@ -93,6 +93,7 @@ namespace Boleto.Tests.IntegrationTests
 
             var responseToken = await client.GetAsync("/test");
             var token = JsonConvert.DeserializeObject<TokenResponse>(await responseToken.Content.ReadAsStringAsync());
+            Assert.NotNull(token);
 
             var response = await boletoService.CalcularValorBoletoAsync(code, DateTime.Now, token.Token);
 
