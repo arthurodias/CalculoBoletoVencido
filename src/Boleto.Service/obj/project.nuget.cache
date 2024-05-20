@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RWETj7WGBmgaWhNioa9gHc3mamo8BVdEosezBYwnTVpdOxa8GeTfZfU9yRTSVRn8Fi1I+wz2cNM9NP6wuMBDpA==",
+  "success": true,
+  "projectFilePath": "/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/src/Boleto.Service/Boleto.Service.csproj",
+  "expectedPackageFiles": [
+    "/Users/arthur_rodias/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
