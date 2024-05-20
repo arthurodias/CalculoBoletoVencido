@@ -16,24 +16,25 @@ Decidimos implementar um cliente de API dedicado na camada Infrastructure para l
 
 ### Positivas:
 
-Melhor organização e legibilidade do código.
-Facilita a gestão de mudanças relacionadas à comunicação com a API externa.
-Simplificação dos testes, permitindo implementações simuladas (mock) do cliente de API.
+- **Melhor organização e legibilidade do código.**
+- **Facilita a gestão de mudanças relacionadas à comunicação com a API externa.**
+- **Simplificação dos testes, permitindo implementações simuladas (mock) do cliente de API.**
 
 ### Negativas:
 
-Complexidade adicional no gerenciamento de tokens de autenticação.
-Potencial para aumento de latência devido à comunicação em rede com a API externa.
+- **Complexidade adicional no gerenciamento de tokens de autenticação.**
+- **Potencial para aumento de latência devido à comunicação em rede com a API externa.**
 
 ## Alternativas Consideradas:
 
-Chamadas Diretas à API na Camada de Serviço: Rejeitado devido ao potencial de duplicação de código e má separação de responsabilidades.
-Bibliotecas de Terceiros: Usar bibliotecas de terceiros para comunicação com a API foi considerado, mas julgado desnecessário para o escopo deste projeto.
-Implementação:
+- **Chamadas Diretas à API na Camada de Serviço**: Rejeitado devido ao potencial de duplicação de código e má separação de responsabilidades.
+- **Bibliotecas de Terceiros**: Usar bibliotecas de terceiros para comunicação com a API foi considerado, mas julgado desnecessário para o escopo deste projeto.
 
-Implementado BoletoApiClient no projeto BoletoService.
-Configurado o cliente HTTP com injeção de dependência no Program.cs.
-Adicionado middleware para gerenciamento de tokens para lidar com autenticação de API.
+## Implementação:
+
+- **Implementado BoletoApiClient no projeto BoletoService.**
+- **Configurado o cliente HTTP com injeção de dependência no Program.cs.**
+- **Adicionado middleware para gerenciamento de tokens para lidar com autenticação de API.**
 
 ## Status:
 Aceito e implementado.
