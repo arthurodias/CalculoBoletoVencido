@@ -33,7 +33,7 @@ A configuração inicial é mais complexa devido à necessidade de gerenciar mú
 Potencial de superengenharia se não for gerenciado adequadamente, especialmente para projetos menores.
 Alternativas Consideradas:
 
-## Abordagem Monolítica: Manter tudo em um único projeto. Rejeitado devido a preocupações com manutenibilidade e escalabilidade.
+Abordagem Monolítica: Manter tudo em um único projeto. Rejeitado devido a preocupações com manutenibilidade e escalabilidade.
 Microservices: Dividir em serviços menores para cada funcionalidade. Considerado muito complexo para os requisitos atuais e escopo do projeto.
 
 ## Implementação:
