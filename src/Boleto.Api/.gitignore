@@ -57,6 +57,9 @@ mono_crash.*
 bin/
 obj/
 
+# Ignore Debug directories
+**/Debug/
+
 # Ignore Test result files
 TestResults/
 *.trx
@@ -102,3 +105,11 @@ coverage.json
 # Ignore assembly info files
 *AssemblyInfo.cs
 
+# Ignore logs, debug results and database files
+*.log
+*.ds_store
+*.db
+*.pdb
+*.mdb
+*.opendb
+*.ldb
