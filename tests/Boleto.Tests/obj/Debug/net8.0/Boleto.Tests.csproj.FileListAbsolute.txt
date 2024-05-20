@@ -858,3 +858,4 @@
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/tests/Boleto.Tests/obj/Debug/net8.0/Boleto.Tests.pdb
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/tests/Boleto.Tests/obj/Debug/net8.0/Boleto.Tests.genruntimeconfig.cache
 /Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/tests/Boleto.Tests/obj/Debug/net8.0/ref/Boleto.Tests.dll
+/Users/arthur_rodias/Projetos/Desafio Tecnico Builds 2/tests/Boleto.Tests/bin/Debug/net8.0/Boleto.Api.xml

@@ -16,9 +16,9 @@ namespace Boleto.Service.Services
             _apiClient = apiClient;
         }
 
-        public async Task<BoletoResponse> CalcularValorBoletoAsync(string barCode, DateTime paymentDate)
+        public async Task<BoletoResponse> CalcularValorBoletoAsync(string barCode, DateTime paymentDate, string token)
         {
-            var boleto = await _apiClient.GetBoletoAsync(barCode);
+            var boleto = await _apiClient.GetBoletoAsync(barCode, token);
 
             if (boleto.Type != "NPC")
                 throw new ArgumentException("Apenas boletos do tipo NPC podem ser calculados.");
