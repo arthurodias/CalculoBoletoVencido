@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boleto.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa616cf873386f988a5aad8fad836fd45276ec9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2b033dd0842084d521226e49e8e8a69c07d6693")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boleto.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boleto.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

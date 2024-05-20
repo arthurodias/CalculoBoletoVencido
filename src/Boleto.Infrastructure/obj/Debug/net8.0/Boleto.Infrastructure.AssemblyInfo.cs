@@ -13,10 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Boleto.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa616cf873386f988a5aad8fad836fd45276ec9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+887fab934d4875e7b62aff0d08470abad07e7a06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Boleto.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Boleto.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
+// Gerado pela classe WriteCodeFragment do MSBuild.
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

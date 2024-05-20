@@ -99,3 +99,6 @@ coverage.json
 # *.user
 # *.userosscache
 # *.sln.docstates
+# Ignore assembly info files
+*AssemblyInfo.cs
+
