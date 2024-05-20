@@ -12,9 +12,25 @@ Esta API foi desenvolvida para calcular pagamentos de boletos vencidos, garantin
 - **BoletoService**: Implementa a lógica de negócios e serviços.
 - **BoletoTests**: Contém testes unitários e de integração.
 
-## Requisitos
+## Tecnologias Utilizadas
 
-- .NET 8.0 SDK ou superior
+- .NET 8
+- Entity Framework Core
+- SQLite
+- Moq
+- xUnit
+
+## Configuração do Banco de Dados
+
+A aplicação utiliza SQLite como banco de dados. A configuração do banco de dados é feita no arquivo `appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=BoletoDb.db"
+  }
+}
+```
 
 ## Configuração do Projeto
 
@@ -38,7 +54,27 @@ No arquivo appsettings.json, configure as credenciais da API:
   }
 }
 ```
-### 4. Executar a Aplicação
+### 4. Migrações do Entity Framework
+
+Antes de rodar a aplicação ou os testes, é necessário aplicar as migrações para garantir que o esquema do banco de dados está atualizado.
+
+### Aplicando Migrações
+Abra o terminal na raiz do projeto.
+Execute o comando:
+```
+dotnet ef database update
+```
+Este comando aplicará todas as migrações pendentes ao banco de dados configurado.
+
+Adicionando uma Nova Migração
+Se você fizer alterações no modelo de dados e precisar criar uma nova migração, execute:
+
+```
+dotnet ef migrations add NomeDaMigracao
+dotnet ef database update
+```
+
+### 5. Executar a Aplicação
 ```
 dotnet run --project Boleto.Api
 ```
@@ -71,14 +107,16 @@ Response:
 ```
 Exemplo de Uso
 ```
-curl --location --request POST 'http://localhost:5000/api/boletos/calculate' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "bar_code": "34191790010104351004791020150008291070026000",
-    "payment_date": "2023-05-10"
+curl -X 'POST' \
+  'http://localhost:5075/Boleto' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "bar_code": "34191790010104351004791020150008291070026000",
+  "payment_date": "20/05/2024"
 }'
 ```
-Testes
+### 6. Testes
 
 Executar Testes Unitários e de Integração
 ```
