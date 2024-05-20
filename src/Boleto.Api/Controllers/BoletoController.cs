@@ -34,17 +34,46 @@ namespace Boleto.Api.Controllers
         /// <response code="200">Retorna os dados do boleto calculado.</response>
         /// <response code="400">Se ocorrer algum erro durante o processamento do boleto.</response>
         [HttpPost]
-        public async Task<IActionResult> CalculateBoleto([FromBody] BoletoRequest request)
+        public async Task<IActionResult> CalcularBoleto([FromBody] BoletoRequest request)
         {
+            if (request == null)
+            {
+                return BadRequest(new { error = "A solicitação é inválida." });
+            }
+
+            if (string.IsNullOrEmpty(request.BarCode) || string.IsNullOrEmpty(request.PaymentDate))
+            {
+                return BadRequest(new { error = "Código de barras e data de pagamento são obrigatórios." });
+            }
+
             try
             {
-                string token = Request.Headers["Authorization"].ToString();
-                var result = await _boletoService.CalcularValorBoletoAsync(request.BarCode, DateTime.Parse(request.PaymentDate), token);
+                string token = Request.Headers.Authorization.ToString();
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return Unauthorized(new { error = "Token de autorização é obrigatório." });
+                }
+
+                if (!DateTime.TryParse(request.PaymentDate, out DateTime paymentDate))
+                {
+                    return BadRequest(new { error = "Data de pagamento inválida." });
+                }
+
+                var result = await _boletoService.CalcularValorBoletoAsync(request.BarCode, paymentDate, token);
                 return Ok(result);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { error = ex.Message });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { error = ex.Message });
+                return StatusCode(500, new { error = "Ocorreu um erro interno no servidor. Tente novamente mais tarde." });
             }
         }
     }
